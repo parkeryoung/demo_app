@@ -1,9 +1,5 @@
 <%= form_for @product do |f| %>
   <div>
-    <%= f.label :catalog_id %>
-    <%= f.select :catalog_id, options_from_collection_for_select(@catalogs, :id, :name, params[:catalog_id]) %>
-  </div>
-  <div>
     <%= f.label :active %>
     <%= f.check_box :active, checked: true %>
   </div>
