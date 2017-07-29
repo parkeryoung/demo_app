@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
+    @catalogs = Catalog.all
   end
 
   def create

@@ -1,0 +1,24 @@
+<%= form_for @product do |f| %>
+  <div>
+    <%= f.label :catalog_id %>
+    <%= f.select :catalog_id, options_from_collection_for_select(@catalogs, :id, :name, params[:catalog_id]) %>
+  </div>
+  <div>
+    <%= f.label :active %>
+    <%= f.check_box :active, checked: true %>
+  </div>
+  <div>
+    <%= f.label :price %>
+    $<%= f.number_field :price %>
+  </div>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <%= f.submit "Submit" %>
+<% end %>

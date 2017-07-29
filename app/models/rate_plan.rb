@@ -1,0 +1,2 @@
+class RatePlan < ApplicationRecord
+end
