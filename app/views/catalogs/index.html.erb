@@ -1,0 +1,9 @@
+<div class="catalogs">
+  <%= link_to("Create Catalog", new_catalog_path) %>
+  <% @catalogs.each do |catalog| %>
+    <div class="catalog">
+      <span><%= link_to(catalog.name, catalog_path(catalog)) %></span>
+      <span><%= link_to("Edit", edit_catalog_path(catalog)) %></span>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,16 @@
+<h1><%= @catalog.name %></h1>
+<table class="products">
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <%= @catalog.products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description.truncate(30)</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
