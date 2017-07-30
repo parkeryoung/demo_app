@@ -58,7 +58,7 @@ class RatePlansController < ApplicationController
   end
 
   def rate_plan_params
-    params.require(:rate_plan).permit(:title, :description, :recurrence, :price)
+    params.require(:rate_plan).permit(:title, :description, :recurrence, :price, :product_id)
   end
 
   def load_products

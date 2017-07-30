@@ -4,7 +4,7 @@ class Product < ApplicationRecord
 
   DATE_FORMAT = '%m/%d/%Y'
 
-  scope :active, -> { where("products.end_date IS NULL OR products.end_date > ?", Time.now.to_s(:db))}
+  scope :active, -> { where("products.end_date IS NULL OR (products.start_date < :today AND products.end_date > :today)", today: Time.now.to_s(:db))}
 
   def start_date
     display_date(super)
