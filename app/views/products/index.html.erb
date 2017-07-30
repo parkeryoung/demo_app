@@ -1,0 +1,6 @@
+<h1>Products</h1>
+<%= link_to("New Product", new_product_path) %>
+<%= label_tag :show_discontinued %>
+<%= check_box_tag :show_discontinued, 1, true %>
+<%= render partial: 'list', products: @products %>
+

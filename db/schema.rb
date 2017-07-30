@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(version: 20170729182730) do
     t.text "description"
     t.date "start_date"
     t.date "end_date"
-    t.integer "reccurence"
+    t.integer "recurrence"
     t.float "price"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

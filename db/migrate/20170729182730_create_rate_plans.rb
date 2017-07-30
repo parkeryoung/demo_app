@@ -5,8 +5,9 @@ class CreateRatePlans < ActiveRecord::Migration[5.1]
       t.text :description
       t.date :start_date
       t.date :end_date
-      t.integer :reccurence
-      t.float :price
+      t.integer :recurrence
+      t.float :price, scale: 2
+      t.integer :product_id
 
       t.timestamps
     end

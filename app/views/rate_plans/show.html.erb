@@ -1,0 +1,12 @@
+<%= link_to "Edit", edit_rate_plan_path(@rate_plan) %>
+<h1><%= @rate_plan.title %></h1>
+<div class="description">
+  <%= @rate_plan.description %>
+</div>
+
+<div class="start_date">Start Date: <%= @rate_plan.start_date %></div>
+
+<div class="end_date">End Date: <%= @rate_plan.end_date %></div>
+
+<div class="recurrence">Recurrence: <%= @rate_plan.display_recurrence %></div>
+<div class="price">Price: $<%= @rate_plan.price %></div>

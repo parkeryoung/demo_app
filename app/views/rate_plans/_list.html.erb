@@ -1,0 +1,30 @@
+<table class="rate_plans">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Recurrence</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% rate_plans.each do |plan| %>
+      <tr>
+        <td><%= plan.title %></td>
+        <td><%= truncate(plan.description) %></td>
+        <td><%= plan.start_date %></td>
+        <td><%= plan.end_date %></td>
+        <td><%= plan.display_recurrence %></td>
+        <td>$<%= plan.price %></td>
+        <td>
+          <%= link_to("Show", rate_plan_path(plan)) %>
+          <%= link_to("Edit", edit_rate_plan_path(plan)) %>
+          <%= link_to("Delete", rate_plan_path(plan), method: :delete) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
