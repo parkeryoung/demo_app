@@ -4,6 +4,6 @@ class Api::ProductsController < ActionController::API
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.active.find(params[:id])
   end
 end
