@@ -2,7 +2,7 @@ class RatePlan < ApplicationRecord
   validate :date_conflict
   DATE_FORMAT = '%m/%d/%Y'
 
-  scope :active, -> { where("rate_plans.end_date IS NULL OR rate_plans.end_date > ?", Time.now.to_s(:db))}
+  scope :active, -> { where("rate_plans.end_date IS NULL OR (rate_plans.start_date < :today AND rate_plans.end_date > :today)", today: Time.now.to_s(:db))}
 
   RECURRENCE = {
     "One-Time" => 0,
